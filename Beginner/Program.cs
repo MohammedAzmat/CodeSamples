@@ -7,18 +7,15 @@ namespace Beginner
     {
         static void Main(string[] args)
         {
-            //MedianOf2SortedArrays();
             Console.WriteLine("\n\nHello World!");
-            //LngstPalinSubStr();
-            //ZigZagStr();
-            //RevNum();
-            //SimpleRegularExp();
-            //myAtoI();
-            //RevStrOrdr();
-            //CharsInWindow();
 
-            //Qsorting();
-            ZOTwo();
+            //Arrays
+            Seq();
+            //MIA();
+            //SSM();
+
+            //Tree
+            //Plant();
             Console.ReadKey();
 
         }
@@ -59,6 +56,8 @@ namespace Beginner
 
         #endregion
 
+
+        #region Arrays
         #region Median of 2 sorted arrays
         private static void MedianOf2SortedArrays()
         {
@@ -157,6 +156,51 @@ namespace Beginner
 
             Console.ForegroundColor = orginalFGColor;
         }
+        #endregion
+
+        #region Largest and Second Largest Element in an array
+        private static void MIA()
+        {
+            int[] a = new int[] { 12, 3, 43, 21, 6, 23, 76, 86, 23, 1, 3, 6, 8 };
+            Arrays.MaxInArray mia = new Arrays.MaxInArray();
+            mia.MaxElem(new int[] { 12, 3, 43, 21, 6,  23, 1, 3, 6, 8 });
+            mia.MaxElem(new int[] { 12, 3,  1, 3, 6, 8 });
+            mia.MaxElem(new int[] { 12, 3, 43, 21, 6, 23, 76, 86, 23, 1, 3, 6, 8 });
+            mia.MaxElem(new int[] { 12, 3,12 });
+            mia.MaxElem(new int[] {  });
+        }
+        #endregion
+
+        #region Stock Matket
+        //Get min before max and get max
+        private static void SSM()
+        {
+            Arrays.BuySellStock bss = new Arrays.BuySellStock();
+            bss.GetBuySellDays(new int[] { 20, 5, 2, 8, 10, 15, 7, 11, 13, 1, 2 });
+            bss.GetBuySellDays(new int[] { 20, 5, 2, 8, 10, 15, 7, 11, 13, 1, 2,18 });
+            bss.GetBuySellDays(new int[] { 20, 5, 2, 8, 10, 15, 7, 11, 13, 1, 18 });
+            bss.GetBuySellDays(new int[] { 1,0,0,0,0,0,0,0,0,0,0,0,0 });
+        }
+        #endregion
+
+        #region Sequences in Arrays
+        private static void Seq()
+        {
+            Arrays.Sequences seq = new Arrays.Sequences();
+            //Console.WriteLine("\n\n\t\tLongestIncreasingSequence\n");
+            //seq.LongestIncreasingSequence1(new int[] { 1, 2, 3, 5, 4, 6, 7, 8, 9, 10 });
+            //seq.LongestIncreasingSequence1(new int[] { 1, 2, 3, 5, 6, 7, 8, 9, 10 });
+            //seq.LongestIncreasingSequence1(new int[] { 7, 8, 9, 10,3, 2, 1, 6, 8,9,9});
+
+            Console.WriteLine("\n\n\t\tLargestContigSumSimple\n");
+            seq.LargestContigSumSimple(new int[] { -7, 1,-3,4,2,-1 });
+            seq.LargestContigSumSimple(new int[] { -7, 4, -3, 4, 2, -1 });
+
+            Console.WriteLine("\n\n\t\tLargestContigSumWithIndex\n");
+            seq.LargestContigSumWithIndex(new int[] { -7, 1, -3, 4, 2, -1 });
+            seq.LargestContigSumWithIndex(new int[] { -7, 4, -3, 4, 2, -1 });
+        }
+        #endregion
         #endregion
 
         #region Strings
@@ -284,7 +328,13 @@ namespace Beginner
         #endregion
         #endregion
 
-
+        #region Trees
+        private static void Plant()
+        {
+            Trees.EarliestCommonAncestor test = new Trees.EarliestCommonAncestor();
+            test.Test();
+        }
+        #endregion
 
     }
 }

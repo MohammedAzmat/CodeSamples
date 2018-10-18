@@ -1,6 +1,7 @@
 ﻿using System;
 
 
+
 namespace Beginner
 {
     class Program
@@ -187,10 +188,11 @@ namespace Beginner
         private static void Seq()
         {
             Arrays.Sequences seq = new Arrays.Sequences();
-            //Console.WriteLine("\n\n\t\tLongestIncreasingSequence\n");
+            Console.WriteLine("\n\n\t\tLongestIncreasingSequence\n");
             //seq.LongestIncreasingSequence1(new int[] { 1, 2, 3, 5, 4, 6, 7, 8, 9, 10 });
             //seq.LongestIncreasingSequence1(new int[] { 1, 2, 3, 5, 6, 7, 8, 9, 10 });
             //seq.LongestIncreasingSequence1(new int[] { 7, 8, 9, 10,3, 2, 1, 6, 8,9,9});
+            seq.LongestIncreasingSequence1(new int[] { -7, 1, -3, 4, 2, -1 });
 
             Console.WriteLine("\n\n\t\tLargestContigSumSimple\n");
             seq.LargestContigSumSimple(new int[] { -7, 1,-3,4,2,-1 });

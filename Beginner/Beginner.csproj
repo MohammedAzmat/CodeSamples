@@ -12,7 +12,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Graphs\" />
+    <ProjectReference Include="..\Arrays\Arrays.csproj" />
+    <ProjectReference Include="..\LinkedLists\LinkedLists.csproj" />
+    <ProjectReference Include="..\Numbers\Numbers.csproj" />
+    <ProjectReference Include="..\Sorts\Sorts.csproj" />
+    <ProjectReference Include="..\Strings\Strings.csproj" />
+    <ProjectReference Include="..\Trees\Trees.csproj" />
   </ItemGroup>
 
 </Project>

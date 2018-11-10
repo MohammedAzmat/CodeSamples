@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BuySellStock.cs" />
+    <Compile Include="Hanoi.cs" />
     <Compile Include="MaxInArray.cs" />
     <Compile Include="MedianOfArrays.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

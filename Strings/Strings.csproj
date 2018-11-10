@@ -41,9 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Brackets.cs" />
+    <Compile Include="KSubstringWithK_1Unique.cs" />
     <Compile Include="LgstNonRptngSubString.cs" />
     <Compile Include="LngstPalinSubString.cs" />
     <Compile Include="MyA2I.cs" />
+    <Compile Include="PartitionSubScene.cs" />
+    <Compile Include="Permutations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReverseOrder.cs" />
     <Compile Include="SimpleRegEx.cs" />

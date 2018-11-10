@@ -8,17 +8,8 @@ namespace Beginner
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("\n\nHello World!");
-
-            //Arrays
-            Seq();
-            //MIA();
-            //SSM();
-
-            //Tree
-            //Plant();
+            NumbersCoins();
             Console.ReadKey();
-
         }
 
         #region Add 2 Numbers using Linked List
@@ -193,6 +184,7 @@ namespace Beginner
             //seq.LongestIncreasingSequence1(new int[] { 1, 2, 3, 5, 6, 7, 8, 9, 10 });
             //seq.LongestIncreasingSequence1(new int[] { 7, 8, 9, 10,3, 2, 1, 6, 8,9,9});
             seq.LongestIncreasingSequence1(new int[] { -7, 1, -3, 4, 2, -1 });
+            seq.LongestIncreasingSequence1(new int[] { 7, 8, 9, 4, 2, 1,2,3,4 });
 
             Console.WriteLine("\n\n\t\tLargestContigSumSimple\n");
             seq.LargestContigSumSimple(new int[] { -7, 1,-3,4,2,-1 });
@@ -203,6 +195,14 @@ namespace Beginner
             seq.LargestContigSumWithIndex(new int[] { -7, 4, -3, 4, 2, -1 });
         }
         #endregion
+
+        #region Hanoi
+        private static void TowerOfHanoi()
+        {
+            Arrays.Hanoi hanoi = new Arrays.Hanoi(4);
+        }
+        #endregion
+
         #endregion
 
         #region Strings
@@ -280,7 +280,71 @@ namespace Beginner
             abc.slidingWindowForCount("favere favere fakkal dikhana aa gayaa faala", 10);
         }
         #endregion
+
+        #region Number of K size Substrings with k-1 unique elements
+        private static void KSizeSubStringWithK_1Uniq()
+        {
+            Strings.KSubstringWithK_1Unique k_k_1 = new Strings.KSubstringWithK_1Unique();
+            k_k_1.Printlist("azmat", 4);
+            k_k_1.Printlist("azmat", 3);
+            k_k_1.Printlist("malayalam", 4);
+
+        }
         #endregion
+        #endregion
+        #region SubScenes
+        private static void SubScenes()
+        {
+            Strings.PartitionSubScene subScenes = new Strings.PartitionSubScene();
+            subScenes.PrintSubScenes(new char[] { 'a', 'b', 'c', 'd', 'e', 'f', 'g'});
+            subScenes.PrintSubScenes(new char[] { 'a', 'b', 'a', 'c', 'd', 'a', 'e', 'f', 'g','e','f' });
+            subScenes.PrintSubScenes(new char[] { 'a', 'b', 'c', 'd','a','d', 'e', 'f', 'g', 'e','a' });
+            subScenes.PrintSubScenes(new char[] { 'a', 'b', 'c', 'd', 'a', 'b', 'a', 'c', 'e', 'f', 'g', 'e', 'f', 'g', 'e', 'f' });
+            subScenes.PrintSubScenes(new char[] { 'a', 'b', 'c', 'd', 'a','e', 'f', 'g', 'e', 'f', 'e', 'f', 'e', 'f' });
+
+        }
+        #endregion
+        #region Stacks via Brackets
+        private static void BracketBalance()
+        {
+            Strings.Brackets brackets = new Strings.Brackets();
+            string str = "{}{}{}{}()()[][]<><>";
+            Console.WriteLine("Output for string: "+str+"\t:: " +  brackets.Order(str));
+            str = "}{}{}{}()()[][]<><>";
+            Console.WriteLine("Output for string: " + str + "\t:: " + brackets.Order(str));
+            str = "{{{{{{{{}}}}}}}}";
+            Console.WriteLine("Output for string: " + str + "\t:: " + brackets.Order(str));
+            str = "{{{{{{{{}}}}}}}";
+            Console.WriteLine("Output for string: " + str + "\t:: " + brackets.Order(str));
+            str = "{[<()>]}[{(<>)}][][][][]";
+            Console.WriteLine("Output for string: " + str + "\t:: " + brackets.Order(str));
+
+        }
+
+        private static void BracketCombos()
+        {
+            Strings.Brackets brackets = new Strings.Brackets();
+            brackets.PrintBracketString(3);
+            Console.WriteLine();
+            brackets.PrintBracketString(4);
+        }
+        #endregion
+        #region Permutations of a given string
+        private static void StringPermutations()
+        {
+            Strings.Permutations perm = new Strings.Permutations();
+            perm.PrintPerms("abc");
+            perm.PrintPerms("abcd");
+            perm.PrintPerms("abcde");
+            perm.PrintPerms("xy");
+            Console.WriteLine("\n------------------------------------------------------\n");
+            perm.PrintPerms("aa");
+            perm.PrintPerms("aba");
+            perm.PrintPerms("abca");
+
+        }
+        #endregion
+
         #endregion
 
         #region Numbers
@@ -295,8 +359,36 @@ namespace Beginner
 
         #endregion
 
+        #region GCD
+        private static void GCD()
+        {
+            int[] arr = { 2, 4, 6, 8, 16 };
+            int n = arr.Length;
+            Numbers.GCD gcd = new Numbers.GCD();
+            Console.Write(gcd.findGCD(arr, n));
+        }
+        #endregion
 
+        #region Active InActive HOuses
+        private static void ActInActHouse()
+        {
+            Numbers.HouseActiveInActive houses = new Numbers.HouseActiveInActive();
+            houses.Initiate(new int[] { 0, 1, 0 }, 1);
+            houses.Initiate(new int[] { 0, 1, 0 }, 2);
+            houses.Initiate(new int[] { 0, 1, 0 }, 3);
 
+        }
+
+        private static void NumbersCoins()
+        {
+            Numbers.Coins coins = new Numbers.Coins();
+            //coins.PrintCoins(-5);
+            //coins.PrintCoins(0);
+            //coins.PrintCoins(25);
+            //coins.PrintCoins(30);
+            coins.PrintCoins(10);
+        }
+        #endregion
         #endregion
 
         #region Sorts
@@ -335,6 +427,17 @@ namespace Beginner
         {
             Trees.EarliestCommonAncestor test = new Trees.EarliestCommonAncestor();
             test.Test();
+        }
+
+        private static void PathInTree()
+        {
+            Trees.PathBetween2Nodes pb2n = new Trees.PathBetween2Nodes();
+            Trees.Node root = pb2n.MakeBSTFromArray(new int[] {5,6,3,1,2,4 });
+            pb2n.InOrderTraversal(root);
+            pb2n.TestPathDistanceBetweenNodesBST(root, 2, 4);
+            pb2n.TestPathDistanceBetweenNodesBST(root, 1, 4);
+            pb2n.TestPathDistanceBetweenNodesBST(root, 2, 5);
+            pb2n.TestPathDistanceBetweenNodesBST(root, 2, 7);
         }
         #endregion
 

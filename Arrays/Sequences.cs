@@ -18,8 +18,11 @@ namespace Arrays
                 }
                 else
                 {
-                    lstStIndex = stIndex;
-                    lastSeqCount = endIndex - stIndex + 1;
+                    if ((endIndex - stIndex + 1) > lastSeqCount)
+                    {
+                        lstStIndex = stIndex;
+                        lastSeqCount = endIndex - stIndex + 1;
+                    }
                     stIndex = endIndex = i + 1;
                 }
             }
@@ -89,6 +92,14 @@ namespace Arrays
             int stIndex = 0, endIndex = 0, lstStIndex = 0, lastSeqCount = 0;
             
             displayArray("\n\nInput Array: ", arr, 0, arr.Length);
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i + 1] > arr[i])
+                {
+                    endIndex++;
+                }
+            }
 
             displayArray("\nLongest Increasing Subsequence Array: ", arr, lstStIndex, lastSeqCount + lstStIndex);
             

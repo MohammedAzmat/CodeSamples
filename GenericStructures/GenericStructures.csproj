@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1D5DC994-9581-45A7-AFD7-50C256758E51}</ProjectGuid>
+    <ProjectGuid>{CD2C637B-2320-4A5F-8476-846BF6F2DE1A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Arrays</RootNamespace>
-    <AssemblyName>Arrays</AssemblyName>
+    <RootNamespace>GenericStructures</RootNamespace>
+    <AssemblyName>GenericStructures</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,21 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BuySellStock.cs" />
-    <Compile Include="Hanoi.cs" />
-    <Compile Include="IntersectionRectangles.cs" />
-    <Compile Include="LongestSubstring.cs" />
-    <Compile Include="MaxDiffInIndex.cs" />
-    <Compile Include="MaxInArray.cs" />
-    <Compile Include="MedianOfArrays.cs" />
-    <Compile Include="OptimizeCost.cs" />
+    <Compile Include="PriorityQueue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RobotTrenchObst.cs" />
-    <Compile Include="Sequences.cs" />
-    <Compile Include="ShortestFirst.cs" />
-    <Compile Include="TicTacToe.cs" />
-    <Compile Include="Triangle.cs" />
-    <Compile Include="WightedPath.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

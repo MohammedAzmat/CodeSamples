@@ -8,7 +8,7 @@ namespace Beginner
     {
         static void Main(string[] args)
         {
-            NumbersCoins();
+            SmlDiff();
             Console.ReadKey();
         }
 
@@ -60,14 +60,14 @@ namespace Beginner
             int[] e = new int[] { 2 };
             int[] f = new int[] { 1, 3 };
 
-            //ShowMedianof2SortedArrays(a, b);
+            ShowMedianof2SortedArrays(a, b);
             //ShowMedianof2SortedArrays(a, c);
             //ShowMedianof2SortedArrays(c, b);
             //ShowMedianof2SortedArrays(d, e);
             //ShowMedianof2SortedArrays(f, e);
             //ShowMedianof2SortedArrays(f, c);
             //ShowMedianof2SortedArrays(new int[] { 1,2 }, new int[] { 3, 4 });
-            ShowMedianof2SortedArrays(new int[] { 4, 5 }, new int[] { 1, 2, 3, 6, 7 });
+            //ShowMedianof2SortedArrays(new int[] { 4, 5 }, new int[] { 1, 2, 3, 6, 7 });
 
 
         }
@@ -203,6 +203,69 @@ namespace Beginner
         }
         #endregion
 
+        #region Robot to Remove obstacle from 2d array
+        private static void RobotMoves()
+        {
+            Arrays.RobotTrenchObst rto = new Arrays.RobotTrenchObst();
+            int row = 3;
+            int col = 3;
+            int[,] matrix = new int[3,3] { { 1,1,0},{ 1,0,0},{ 1,9,0} };
+            Console.WriteLine("Obstacle Path Length: "+rto.removeObs(row, col, matrix));
+
+        }
+        #endregion
+
+        #region Get Nearest Points
+        private static void KNearestPoints()
+        {
+            Arrays.ShortestFirst KNP = new Arrays.ShortestFirst();
+            int[,] matrix = new int[,] { { 6, 7 }, { 4, 3 }, { 3, 4 }, { -1, -1 }, { 1, 7 }, { 2, 0 }, { 1, -1 } };
+            KNP.GetDeliveryPoints(matrix.GetLength(0), matrix, 4);
+        }
+        #endregion
+
+        #region SubString within String
+        private static void SubstringInString()
+        {
+            Arrays.LongestSubstring Lsub = new Arrays.LongestSubstring();
+            Console.WriteLine(Lsub.GetSubstring("banana"));
+        }
+        #endregion
+        #region Difference in Indexes
+        private static void GetMaxDiffInIndexes()
+        {
+            Arrays.MaxDiffInIndex Lsub = new Arrays.MaxDiffInIndex();
+            Lsub.PrintMaxDiffInIndexes(new int[] { 35, 5, 3, 2, 20, 10, 24, 32, 34, 1 });
+        }
+        #endregion
+
+
+        #region OptimizeCost
+        public static void CostOptimization()
+        {
+            Arrays.OptimizeCost optcost = new Arrays.OptimizeCost();
+            Console.WriteLine(optcost.OptimizeMyCost());
+        }
+        #endregion
+
+        #region Find Shortest path in Graph from 1 to n
+        private static void ShortestPathOfGraph()
+        {
+            Arrays.WightedPath swp = new Arrays.WightedPath();
+            Console.WriteLine(swp.GetPath(5, new int[] { 1, 1, 1, 1, 2, 3 }, new int[] { 2, 3, 4, 5, 5, 5 }, new int[] { 1, 2, 3, 4, 5, 3 }));
+
+            Console.WriteLine(swp.GetPath(5, new int[] {1 }, new int[] { 5}, new int[] { 5}));
+        }
+        #endregion
+
+        #region Find Shortest path in Graph from 1 to n
+        private static void TriangleProblems()
+        {
+            Arrays.Triangle tri = new Arrays.Triangle();
+            Console.WriteLine(tri.largestPerimeterOpt(new int[] { 10,2,5,1,8,20}));
+        }
+        #endregion
+
         #endregion
 
         #region Strings
@@ -324,6 +387,10 @@ namespace Beginner
         private static void BracketCombos()
         {
             Strings.Brackets brackets = new Strings.Brackets();
+            brackets.PrintBracketString(1);
+            Console.WriteLine();
+            brackets.PrintBracketString(2);
+            Console.WriteLine();
             brackets.PrintBracketString(3);
             Console.WriteLine();
             brackets.PrintBracketString(4);
@@ -344,7 +411,15 @@ namespace Beginner
 
         }
         #endregion
-
+        #region Reverse Strings
+        private static void StringReverse()
+        {
+            Strings.ReverseString reverseString = new Strings.ReverseString();
+            Console.WriteLine(reverseString.ReverseStringWords("perfect makes practice"));
+            char[] c = new char[] { 'p','e','r','f','e','c','t',' ','m','a','k','e','s',' ','p','r','a','c','t','i','c','e' };
+            reverseString.ReverseCharArrayWords(c);
+        }
+        #endregion
         #endregion
 
         #region Numbers
@@ -389,6 +464,86 @@ namespace Beginner
             coins.PrintCoins(10);
         }
         #endregion
+
+        #region Lonely Int
+        private static void LonelyInt()
+        {
+            Numbers.LonelyInt lint = new Numbers.LonelyInt();
+            Console.WriteLine(lint.GetOutLonelyInt(new int[] { 0, 1, 2, 1, 0 }));
+            Console.WriteLine(lint.GetOutLonelyInt(new int[] { 0, 1, 2, 1, 0,2,4,4,7 }));
+        }
+        #endregion
+
+        #region PairedSocks
+        private static void getPairedSocks()
+        {
+            Numbers.PairedSocks ps = new Numbers.PairedSocks();
+            Console.WriteLine(ps.GetPairedSocks(10, new int[] { 1, 1, 3, 1, 2, 1, 3, 3, 3, 3 }));
+        }
+        #endregion
+
+        #region Sequential Numbers  :: 1234, 2345 .....
+        private static void SeqNum()
+        {
+            Numbers.SequentialNumbers seqnum = new Numbers.SequentialNumbers();
+            seqnum.PrintSeqNum(1000, 13000);
+            seqnum.PrintSeqNum(9, 100);
+            seqnum.PrintSeqNum(300, 100);
+            seqnum.PrintSeqNum(100, 300);
+        }
+        #endregion
+
+        #region Bribes
+        private static void bribes()
+        {
+            Numbers.Bribes bribe = new Numbers.Bribes();
+            bribe.minimumBribes(new int[] { 2, 1, 5, 3, 4 });
+        }
+        #endregion
+
+        #region  MinSwaps
+        private static void MinSwap()
+        {
+            Numbers.MinSwaps minswp = new Numbers.MinSwaps();
+            //Console.WriteLine(minswp.MinSwap(new int[] { 7, 1, 3, 2, 4, 5, 6 }));
+            Console.WriteLine(minswp.MinSwap(new int[] { 2, 3, 4, 1, 5 }));
+
+        }
+        #endregion
+
+
+        #region  MinSwaps
+        private static void KSmallest()
+        {
+            Numbers.KthSmallestNumber ksml = new Numbers.KthSmallestNumber();
+            //Console.WriteLine(minswp.MinSwap(new int[] { 7, 1, 3, 2, 4, 5, 6 }));
+            Console.WriteLine(ksml.Ksmall(new int[] {0,3,8,2,5,3,1,8,4,7 },4));
+
+        }
+        #endregion
+
+
+        #region  Cordinate geometry
+        private static void LineSegments()
+        {
+            Numbers.CordinateGeometry lineSeg = new Numbers.CordinateGeometry();
+            lineSeg.Intersect(0,0,1,1,2,2,3,3);
+            lineSeg.Intersect(0, 0, 1, 1, -1, 0, 0, 1);
+            lineSeg.Intersect(0, 0, 1, 1, 1, 0, 0, 1);
+
+        }
+        #endregion
+
+        #region  Cordinate geometry
+        private static void SmlDiff()
+        {
+            Numbers.SmallestDifference.In2ElementsOf2Arrays(new int[] { 1, 3, 11, 17, 2, 234 }, new int[] { 23, 127, 235, 19, 8 });
+            Numbers.SmallestDifference.In2ElementsOf2Arrays(new int[] { 135, 11, 17, 234 }, new int[] { 23, 127, 235, 19, 8 });
+            Numbers.SmallestDifference.In2ElementsOf2Arrays(new int[] { 15,175 }, new int[] { 23, 127, 235, 19, 8 });
+
+        }
+        #endregion
+
         #endregion
 
         #region Sorts
@@ -407,8 +562,8 @@ namespace Beginner
         private static void Qsorting()
         {
             Sorts.QuickSort qs = new Sorts.QuickSort();
-            int[] ary = new int[] { 1, 7, 3, 4, 2, 5, 9, 6, 8, 0 };
-            qs.Qsort(ary, 0, ary.Length - 1);
+            int[] ary = new int[] { 7, 1, 3, 2, 4, 5, 6 };
+            Console.WriteLine("\nTotal Swaps: "+qs.Qsort(ary, 0, ary.Length - 1,0));
         }
         #endregion
 

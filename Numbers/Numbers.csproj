@@ -41,11 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bribes.cs" />
     <Compile Include="Coins.cs" />
+    <Compile Include="CordinateGeometry.cs" />
     <Compile Include="GCD.cs" />
     <Compile Include="HouseActiveInActive.cs" />
+    <Compile Include="KthSmallestNumber.cs" />
+    <Compile Include="LonelyInt.cs" />
+    <Compile Include="MinSwaps.cs" />
+    <Compile Include="PairedSocks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReverseNumber.cs" />
+    <Compile Include="SequentialNumbers.cs" />
+    <Compile Include="SmallestDifference.cs" />
     <Compile Include="String2Num.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

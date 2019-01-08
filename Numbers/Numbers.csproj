@@ -44,10 +44,13 @@
     <Compile Include="Bribes.cs" />
     <Compile Include="Coins.cs" />
     <Compile Include="CordinateGeometry.cs" />
+    <Compile Include="Find2LonerInASeaOfPairs.cs" />
     <Compile Include="GCD.cs" />
     <Compile Include="HouseActiveInActive.cs" />
+    <Compile Include="JumpingNumbers.cs" />
     <Compile Include="KthSmallestNumber.cs" />
     <Compile Include="LonelyInt.cs" />
+    <Compile Include="MinCutSquares.cs" />
     <Compile Include="MinSwaps.cs" />
     <Compile Include="PairedSocks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

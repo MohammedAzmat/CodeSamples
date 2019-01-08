@@ -8,7 +8,7 @@ namespace Numbers
     {
         public int MyAtoi(string str)
         {
-            string exp = @"^";
+            string exp = @"(-?[0-9]+(.[0-9]+)?(e-?[0-9]+(.[0-9]+)?)?)";
             return 0;
         }
     }

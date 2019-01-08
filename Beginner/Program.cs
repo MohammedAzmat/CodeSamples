@@ -8,7 +8,7 @@ namespace Beginner
     {
         static void Main(string[] args)
         {
-            SmlDiff();
+            TopoSort();
             Console.ReadKey();
         }
 
@@ -235,6 +235,7 @@ namespace Beginner
         private static void GetMaxDiffInIndexes()
         {
             Arrays.MaxDiffInIndex Lsub = new Arrays.MaxDiffInIndex();
+            Lsub.PrintMaxDiffInIndexes(new int[] { 34,8,10,3,2,80,30,33,1 });
             Lsub.PrintMaxDiffInIndexes(new int[] { 35, 5, 3, 2, 20, 10, 24, 32, 34, 1 });
         }
         #endregion
@@ -371,16 +372,26 @@ namespace Beginner
         private static void BracketBalance()
         {
             Strings.Brackets brackets = new Strings.Brackets();
-            string str = "{}{}{}{}()()[][]<><>";
-            Console.WriteLine("Output for string: "+str+"\t:: " +  brackets.Order(str));
-            str = "}{}{}{}()()[][]<><>";
-            Console.WriteLine("Output for string: " + str + "\t:: " + brackets.Order(str));
-            str = "{{{{{{{{}}}}}}}}";
-            Console.WriteLine("Output for string: " + str + "\t:: " + brackets.Order(str));
-            str = "{{{{{{{{}}}}}}}";
-            Console.WriteLine("Output for string: " + str + "\t:: " + brackets.Order(str));
-            str = "{[<()>]}[{(<>)}][][][][]";
-            Console.WriteLine("Output for string: " + str + "\t:: " + brackets.Order(str));
+            string str;
+            if (1 == 0)
+            {
+                str = "{}{}{}{}()()[][]<><>";
+                Console.WriteLine("Output for string: " + str + "\t:: " + brackets.Order(str));
+                str = "}{}{}{}()()[][]<><>";
+                Console.WriteLine("Output for string: " + str + "\t:: " + brackets.Order(str));
+                str = "{{{{{{{{}}}}}}}}";
+                Console.WriteLine("Output for string: " + str + "\t:: " + brackets.Order(str));
+                str = "{{{{{{{{}}}}}}}";
+                Console.WriteLine("Output for string: " + str + "\t:: " + brackets.Order(str));
+                str = "{[<()>]}[{(<>)}][][][][]";
+                Console.WriteLine("Output for string: " + str + "\t:: " + brackets.Order(str));
+            }
+            #region LogestValid
+            str = "))((()(())(())()())())((";
+            brackets.GetLongestValidBracketLength(str);
+            str = "))())((()))))(())(()())";
+            brackets.GetLongestValidBracketLength(str);
+            #endregion
 
         }
 
@@ -512,12 +523,25 @@ namespace Beginner
         #endregion
 
 
-        #region  MinSwaps
+        #region  KSmallest
         private static void KSmallest()
         {
             Numbers.KthSmallestNumber ksml = new Numbers.KthSmallestNumber();
             //Console.WriteLine(minswp.MinSwap(new int[] { 7, 1, 3, 2, 4, 5, 6 }));
             Console.WriteLine(ksml.Ksmall(new int[] {0,3,8,2,5,3,1,8,4,7 },4));
+
+        }
+        #endregion
+
+        #region Jump Numbers 121,123,210,212...
+        private static void JumpNum()
+        {
+            Numbers.JumpingNumbers ksml = new Numbers.JumpingNumbers();
+            ksml.PrintJumpingNumbers(7);
+            ksml.PrintJumpingNumbers(15);
+            ksml.PrintJumpingNumbers(150);
+            ksml.PrintJumpingNumbers(1500);
+
 
         }
         #endregion
@@ -575,6 +599,17 @@ namespace Beginner
             zeroOneTwo.ZOT2(new int[] { 1, 2, 0, 1, 2, 0, 2, 1, 0, 0, 1, 2,2, 1,0,0,1,2, 1, 2, 0, 2, 1, 0, 0, 1, 2, 2 });
         }
         #endregion
+
+        #region Topological Sort
+        private static void TopoSort()
+        {
+            Sorts.TopologicalSort ts = new Sorts.TopologicalSort(6);
+            Console.WriteLine();
+            Sorts.TopologicalSort ts1 = new Sorts.TopologicalSort(new string[] { "baa", "abcd", "abca", "cab", "cad" }, 4);
+
+        }
+        #endregion
+
         #endregion
 
         #region Trees

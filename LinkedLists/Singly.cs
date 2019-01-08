@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LinkedLists
 {
-    class Node
+    public class Node
     {
         int val;
         Node link;
@@ -19,7 +19,7 @@ namespace LinkedLists
         public Node Link { get { return link; } set { link = value; } }
         public int Val { get { return val; } set { val = value; } }
     }
-    class Singly
+    public class Singly
     {
         #region Inserts
         public Node Insert(Node head, int val)

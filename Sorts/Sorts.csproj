@@ -44,7 +44,14 @@
     <Compile Include="CountSort.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuickSort.cs" />
+    <Compile Include="TopologicalSort.cs" />
     <Compile Include="ZeroOneTwo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Graphs\Graphs.csproj">
+      <Project>{fdaa5cd2-57e3-4ff8-9605-a24c2e37f589}</Project>
+      <Name>Graphs</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

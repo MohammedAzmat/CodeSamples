@@ -136,5 +136,36 @@ namespace Strings
                 Console.Write(str + " ");
             Console.WriteLine();
         }
+
+        public void GetLongestValidBracketLength(string str)
+        {
+            Stack<char> mystack = new Stack<char>();
+            int tempCount = 0, finalCount = 0;
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (mystack.Count > 0)
+                {
+                    if (str[i] == '(')
+                        mystack.Push(str[i]);
+                    else
+                    {
+                        mystack.Pop();
+                        tempCount += 2;
+                    }
+                }
+                else
+                {
+                    if (str[i] == '(')
+                        mystack.Push(str[i]);
+                    else
+                    {
+                        finalCount = Math.Max(finalCount, tempCount);
+                        tempCount = 0;
+                    }
+                }
+            }
+            finalCount = Math.Max(finalCount, tempCount);
+            Console.WriteLine("String: "+str+" Logest Valid Substring Length: " + finalCount);
+        }
     }
 }

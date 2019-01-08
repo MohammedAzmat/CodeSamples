@@ -46,6 +46,7 @@
     <Compile Include="LgstNonRptngSubString.cs" />
     <Compile Include="LngstPalinSubString.cs" />
     <Compile Include="MyA2I.cs" />
+    <Compile Include="PalindromeWithJunk.cs" />
     <Compile Include="PartitionSubScene.cs" />
     <Compile Include="Permutations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

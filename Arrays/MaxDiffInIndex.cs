@@ -9,16 +9,20 @@ namespace Arrays
     public class MaxDiffInIndex
     {
         /*
-         * arr = {35, 5, 3, 2, 20, 10, 24, 32, 34, 1}   .......... Arr.Length = 10 Output : 7 (8 -1 ) ie A[8] (34)  - A[1] (5)
+         * arr = {35, 5, 3, 2, 20, 10, 24, 32, 34, 1}   
+         * .......... Arr.Length = 10 Output : 7 (8 -1 ) ie A[8] (34)  - A[1] (5)
          */
         private int GetMaxIndexDiff(int[] arr)
         {
             int[] minIndexes = new int[arr.Length];
             int[] maxIndexes = new int[arr.Length];
+            int maxDiff = int.MinValue, i, j = 0;
+
             minIndexes[0] = arr[0];
             int index = 0;
-            for (int i = 1; i < arr.Length; i++)
+            for (i = 1; i < arr.Length; i++)
             {
+                /*
                 if (arr[i] >= arr[index])
                 { minIndexes[i] = index; }
                 else
@@ -26,11 +30,15 @@ namespace Arrays
                     minIndexes[i] = i;
                     index = i;
                 }
+                */
+                minIndexes[i] = (arr[i] < minIndexes[i - 1]) ? arr[i]: minIndexes[i-1];
+                
             }
             index = arr.Length - 1;
             maxIndexes[index] = arr[index];
-            for (int i = arr.Length - 2; i >= 0; i--)
-            {
+            for (i = arr.Length - 2; i >= 0; i--)
+            { 
+                /*
                 if (arr[i] <= arr[index])
                 {
                     maxIndexes[i] = index;
@@ -40,17 +48,21 @@ namespace Arrays
                     maxIndexes[i] = i;
                     index = i;
                 }
+                */
+                maxIndexes[i] = (arr[i] > maxIndexes[i + 1]) ? arr[i] : maxIndexes[i + 1];
             }
-            int maxDiff = maxIndexes[0] - minIndexes[0];
-            for (int i = 1; i < arr.Length; i++)
-                    maxDiff = Math.Max(maxDiff, maxIndexes[i] - minIndexes[i]);
-            /*
-            for (int i = 1; i < arr.Length; i++)
+            i = 0;
+            while (i < arr.Length && j < arr.Length)
             {
-                if ((maxDiff < (maxIndexes[i] - minIndexes[i])) && (arr[i] > arr[i - 1]))
-                    maxDiff = maxIndexes[i] - minIndexes[i];
+                if (minIndexes[i] < maxIndexes[j])
+                {
+                    maxDiff = (maxDiff < j - i) ? j - i : maxDiff;
+                    j++;
+                }
+                else
+                    i++;
             }
-            */
+
             return maxDiff;
         }
         public void PrintMaxDiffInIndexes(int[] arr)

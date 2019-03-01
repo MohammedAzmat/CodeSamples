@@ -64,7 +64,7 @@ namespace Trees
             //Node temp = root;
             if (root == null)
                 return new Node(value);
-            if (value < root.value)
+            if (value <= root.value)
                 root.left = AddArrElemToTree2(root.left, value);
             else
                 root.right = AddArrElemToTree2(root.right, value);
@@ -81,6 +81,20 @@ namespace Trees
                 Console.Write(root.value + " ");
                 InOrderTraversal(root.right);
             }
+        }
+
+        public int CountNodesInRangeBST(Node root,int low, int high,int count)
+        {
+            if (root == null)
+                return count;
+            else
+            {
+                count = CountNodesInRangeBST(root.left,low,high,count);
+                if (root.value >= low && root.value <= high)
+                    count++;
+                count = CountNodesInRangeBST(root.right, low, high, count);
+            }
+            return count;
         }
 
         private Node CommonParentBST(Node root, int big, int small)
@@ -177,10 +191,67 @@ namespace Trees
             if (leftNode != null && rightNode != null)
                 return root;
 
+            /*
             if (leftNode != null) // Right is null
                 return CommonParent(root.left, n1, n2);
             else
                 return CommonParent(root.right, n1, n2);
+                */
+            return (leftNode != null) ? leftNode : rightNode;
+        }
+
+        public void GetCommonParent(Node root, int n1, int n2)
+        {
+            Node CP = CommonParent(root, n1, n2);
+            if (CP == null)
+                Console.WriteLine("No Common Parent Found");
+            else
+                Console.WriteLine("Common Parent: " + CP.value);
+        }
+
+        public void GetSecondLargestElemOfBST(int[] arr)
+        {
+            Node root = MakeBSTFromArray(arr);
+            Node SL = SecondLargestNode(root);
+            if (SL == null)
+                Console.WriteLine("Second Largest element not found");
+            else
+                Console.WriteLine("Second Largest element found as "+SL.value);
+
+        }
+
+        private Node SecondLargestNode(Node root)
+        {
+            //throw new NotImplementedException();
+            if (root == null || (root.left == null && root.right == null))
+                return null;
+            if (root.right == null)
+            {
+                if (root.left.right == null)
+                    return root.left;
+                else
+                    return ScndLargestFunc(root.left, null);
+            }
+            else
+            {
+                return ScndLargestFunc(root.right, root);
+            }
+        }
+
+        private Node ScndLargestFunc(Node root, Node secLarge)
+        {
+            //throw new NotImplementedException();
+            if (root.right == null)
+            {
+                if (secLarge == null)
+                    return root;
+                else
+                    return secLarge;
+            }
+            if (secLarge == null)
+                return ScndLargestFunc(root.right, secLarge);
+            else
+                return ScndLargestFunc(root.right, secLarge.right);
         }
     }
 

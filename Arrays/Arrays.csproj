@@ -51,6 +51,7 @@
     <Compile Include="OptimizeCost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RobotTrenchObst.cs" />
+    <Compile Include="Rotate2DArrInplace.cs" />
     <Compile Include="Sequences.cs" />
     <Compile Include="ShortestFirst.cs" />
     <Compile Include="TicTacToe.cs" />

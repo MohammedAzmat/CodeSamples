@@ -8,7 +8,7 @@ namespace Beginner
     {
         static void Main(string[] args)
         {
-            TopoSort();
+            SSM();
             Console.ReadKey();
         }
 
@@ -168,10 +168,10 @@ namespace Beginner
         private static void SSM()
         {
             Arrays.BuySellStock bss = new Arrays.BuySellStock();
-            bss.GetBuySellDays(new int[] { 20, 5, 2, 8, 10, 15, 7, 11, 13, 1, 2 });
-            bss.GetBuySellDays(new int[] { 20, 5, 2, 8, 10, 15, 7, 11, 13, 1, 2,18 });
-            bss.GetBuySellDays(new int[] { 20, 5, 2, 8, 10, 15, 7, 11, 13, 1, 18 });
-            bss.GetBuySellDays(new int[] { 1,0,0,0,0,0,0,0,0,0,0,0,0 });
+            bss.MaximizeProfit(new int[] { 20, 5, 2, 8, 10, 15, 7, 11, 13, 1, 2 });
+            bss.MaximizeProfit(new int[] { 20, 5, 2, 8, 10, 15, 7, 11, 13, 1, 2,18 });
+            bss.MaximizeProfit(new int[] { 20, 5, 2, 8, 10, 15, 7, 11, 13, 1, 18 });
+            bss.MaximizeProfit(new int[] { 1,0,0,0,0,0,0,0,0,0,0,0,0 });
         }
         #endregion
 
@@ -237,6 +237,8 @@ namespace Beginner
             Arrays.MaxDiffInIndex Lsub = new Arrays.MaxDiffInIndex();
             Lsub.PrintMaxDiffInIndexes(new int[] { 34,8,10,3,2,80,30,33,1 });
             Lsub.PrintMaxDiffInIndexes(new int[] { 35, 5, 3, 2, 20, 10, 24, 32, 34, 1 });
+            Lsub.PrintMaxDiffInIndexes(new int[] { 1,2,6,4 });
+            Lsub.PrintMaxDiffInIndexes(new int[] { 10, 8, 6, 4,3 });
         }
         #endregion
 
@@ -267,6 +269,16 @@ namespace Beginner
         }
         #endregion
 
+        #region Rotate 2D Matrix in Place
+
+        private static void MatrixRotation()
+        {
+            Arrays.Rotate2DArrInplace rotate2DArrInplace = new Arrays.Rotate2DArrInplace();
+            rotate2DArrInplace.LetsMakeNRotate(8);
+        }
+
+        #endregion
+
         #endregion
 
         #region Strings
@@ -287,8 +299,9 @@ namespace Beginner
         }
         #endregion
         #region Longest Non Repeating Character substring
-        private static void LngstNRCSubString(string s)
+        private static void LngstNRCSubString()
         {
+            string s = "abcdbefg";
             Strings.LgstNonRptngSubString l1 = new Strings.LgstNonRptngSubString(s);
             Console.WriteLine(s + ": " + l1.LongestNRCharSubString);
         }
@@ -629,7 +642,70 @@ namespace Beginner
             pb2n.TestPathDistanceBetweenNodesBST(root, 2, 5);
             pb2n.TestPathDistanceBetweenNodesBST(root, 2, 7);
         }
+
+        private static void BinaryTree2BinarySearchTree()
+        {
+            Trees.BTtoBST btToBST = new Trees.BTtoBST();
+        }
+        
+
+        #region Duplicate Sub trees
+        private static void DupSubTrees()
+        {
+            Trees.Node root = null;
+            root = new Trees.Node(1);
+            root.left = new Trees.Node(2);
+            root.right = new Trees.Node(3);
+            root.left.left = new Trees.Node(4);
+            root.right.left = new Trees.Node(2);
+            root.right.left.left = new Trees.Node(4);
+            root.right.right = new Trees.Node(4);
+            Trees.DupSubArr dupSubArr = new Trees.DupSubArr();
+            dupSubArr.DupSubTree(root);
+        }
         #endregion
 
+        #region Duplicate Sub trees
+        private static void CommonParent()
+        {
+            Trees.Node root = null;
+            root = new Trees.Node(50);
+            root.left = new Trees.Node(30);
+            root.right = new Trees.Node(37);
+            root.left.left = new Trees.Node(10);
+            root.left.right = new Trees.Node(35);
+            root.right.left = new Trees.Node(60);
+            root.left.left.right = new Trees.Node(15);
+            root.left.right.left = new Trees.Node(32);
+            root.left.right.right = new Trees.Node(45);
+            
+            Trees.PathBetween2Nodes pb2n = new Trees.PathBetween2Nodes();
+            pb2n.GetCommonParent(root, 15, 45);
+        }
+        #endregion
+
+        #region Second Largest Element of BST 
+        private static void SecondLargestInBST()
+        {
+            Trees.PathBetween2Nodes pb2n = new Trees.PathBetween2Nodes();
+            pb2n.GetSecondLargestElemOfBST(new int[] { });
+            pb2n.GetSecondLargestElemOfBST(new int[] {5 });
+            pb2n.GetSecondLargestElemOfBST(new int[] { 5,6});
+            pb2n.GetSecondLargestElemOfBST(new int[] { 5,3});
+            pb2n.GetSecondLargestElemOfBST(new int[] { 5,3,1});
+            pb2n.GetSecondLargestElemOfBST(new int[] { 9,3,1,4,5,6,7,8});
+            pb2n.GetSecondLargestElemOfBST(new int[] { 5,3,1,4,6,7,8,9,0});
+        }
+        #endregion
+        #endregion
+
+        #region LinkedList
+        private static void LRUCache()
+        {
+            LinkedLists.LRUCache lRUCache = new LinkedLists.LRUCache(3);
+            lRUCache.Process(new int[] { 1, 2, 3, 4, 5, 1, 2, 1, 5, 2, 3, 4, 2, 1, 4 });
+           
+        }
+        #endregion
     }
 }

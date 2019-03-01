@@ -49,18 +49,22 @@ namespace LinkedLists
                         if (temp.right != null)
                             myQs[j].Enqueue(temp.right);
                     }
-                    while (myQs[i].Count > 0)
+                    else
                     {
-                        temp.nextRight = myQs[i].Dequeue();
-                        temp = temp.nextRight;
-                        if (temp != null)
+                        while (myQs[i].Count > 0)
                         {
-                            if (temp.left != null)
-                                myQs[j].Enqueue(temp.left);
-                            if (temp.right != null)
-                                myQs[j].Enqueue(temp.right);
+                            temp.nextRight = myQs[i].Dequeue();
+                            temp = temp.nextRight;
+                            if (temp != null)
+                            {
+                                if (temp.left != null)
+                                    myQs[j].Enqueue(temp.left);
+                                if (temp.right != null)
+                                    myQs[j].Enqueue(temp.right);
+                            }
                         }
                     }
+                    
                     i = j;
                 }
             }

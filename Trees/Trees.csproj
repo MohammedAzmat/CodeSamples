@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BTtoBST.cs" />
+    <Compile Include="DupSubArr.cs" />
     <Compile Include="EarliestCommonAncestor.cs" />
     <Compile Include="PathBetween2Nodes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

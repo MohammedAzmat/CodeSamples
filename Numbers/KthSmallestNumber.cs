@@ -26,6 +26,8 @@ namespace Numbers
                 //Console.Write("Return Index: " + ret_index + " Low: " + low + " High: " + high + "\n");
                 //print(arr, low, high);
             }
+            print(arr, 0, arr.Length - 1);
+            Console.Write("\nNumber is: ");
             return arr[k-1];
         }
         private int PutElemInPlace(int[] arr, int low, int high)

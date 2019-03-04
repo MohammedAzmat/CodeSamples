@@ -8,7 +8,7 @@ namespace Beginner
     {
         static void Main(string[] args)
         {
-            SSM();
+            SubstringFunctions();
             Console.ReadKey();
         }
 
@@ -435,6 +435,16 @@ namespace Beginner
 
         }
         #endregion
+
+        #region Substrings
+        private static void SubstringFunctions()
+        {
+            Strings.SubStrings subStrings = new Strings.SubStrings();
+            //subStrings.Execute("abc");
+            subStrings.Execute("abc",new char[] { 'a','b'});
+            subStrings.Execute("abc", new char[] { 'a', 'x' });
+        }
+        #endregion
         #region Reverse Strings
         private static void StringReverse()
         {
@@ -536,12 +546,19 @@ namespace Beginner
         #endregion
 
 
-        #region  KSmallest
+        #region  KSmallest / KLargest
         private static void KSmallest()
         {
             Numbers.KthSmallestNumber ksml = new Numbers.KthSmallestNumber();
             //Console.WriteLine(minswp.MinSwap(new int[] { 7, 1, 3, 2, 4, 5, 6 }));
             Console.WriteLine(ksml.Ksmall(new int[] {0,3,8,2,5,3,1,8,4,7 },4));
+
+        }
+        private static void KLargest()
+        {
+            Numbers.KLargestNumber ksml = new Numbers.KLargestNumber();
+            //Console.WriteLine(minswp.MinSwap(new int[] { 7, 1, 3, 2, 4, 5, 6 }));
+            Console.WriteLine(ksml.KLarge(new int[] { 0, 3, 8, 2, 5, 3, 1, 8, 4, 7 }, 4));
 
         }
         #endregion

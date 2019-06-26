@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Collections.Generic;
 
 
 namespace Beginner
@@ -8,7 +8,10 @@ namespace Beginner
     {
         static void Main(string[] args)
         {
-            SubstringFunctions();
+            //SumAsPair();
+            //MyPalindromes();
+            //TestIterater();
+            Nsteps();
             Console.ReadKey();
         }
 
@@ -441,8 +444,9 @@ namespace Beginner
         {
             Strings.SubStrings subStrings = new Strings.SubStrings();
             //subStrings.Execute("abc");
-            subStrings.Execute("abc",new char[] { 'a','b'});
-            subStrings.Execute("abc", new char[] { 'a', 'x' });
+            //subStrings.Execute("abc",new char[] { 'a','b'});
+            subStrings.GetStrings("abc", new char[] { 'a', 'x' });
+            subStrings.GetStrings("This is my hello world", new char[] { 'i', 's', 'm','r' });
         }
         #endregion
         #region Reverse Strings
@@ -452,6 +456,30 @@ namespace Beginner
             Console.WriteLine(reverseString.ReverseStringWords("perfect makes practice"));
             char[] c = new char[] { 'p','e','r','f','e','c','t',' ','m','a','k','e','s',' ','p','r','a','c','t','i','c','e' };
             reverseString.ReverseCharArrayWords(c);
+        }
+        #endregion
+
+        #region Pallindromes
+        private static void MyPalindromes()
+        {
+            Strings.PalindromeWithJunk MyPalindromes = new Strings.PalindromeWithJunk();
+            if (MyPalindromes.IsPalindrome("Londnol"))
+                Console.WriteLine("True");
+            else
+                Console.WriteLine("False");
+
+            if (MyPalindromes.IsPalindrome("abc cba"))
+                Console.WriteLine("True");
+            else
+                Console.WriteLine("False");
+
+            if (MyPalindromes.IsPalindrome("ab"))
+                Console.WriteLine("True");
+            else
+                Console.WriteLine("False");
+
+           
+
         }
         #endregion
         #endregion
@@ -598,6 +626,24 @@ namespace Beginner
         }
         #endregion
 
+        #region Find Sum as a pair of Two numbers or the closest to it.
+        private static void SumAsPair()
+        {
+            Numbers.TwoNumbersAsSumOfGivenNumber sumAsPairs = new Numbers.TwoNumbersAsSumOfGivenNumber();
+            sumAsPairs.Print(new int[] { 10, 1, 35, 25, 60 }, 60);
+            sumAsPairs.Print(new int[] { 10, 1, 35, 25,50, 60,30,30 }, 60);
+        }
+        #endregion
+
+
+        #region N Steps for 1,2,3 at a time
+        private static void Nsteps()
+        {
+            Numbers.NSteps nSteps = new Numbers.NSteps();
+            Console.WriteLine("Number of ways for 5 steps without mem: " + nSteps.ways + " with mem: " + nSteps.ways2);
+        }
+        #endregion
+
         #endregion
 
         #region Sorts
@@ -714,6 +760,19 @@ namespace Beginner
             pb2n.GetSecondLargestElemOfBST(new int[] { 5,3,1,4,6,7,8,9,0});
         }
         #endregion
+
+        #region Iterater for Binary Search Tree
+        private static void TestIterater()
+        {
+            Trees.IteraterForBT ItBST = new Trees.IteraterForBT();
+            while (ItBST.HasNext())
+            {
+                Console.Write("\t" + ItBST.Next().value);
+            }
+        }
+        #endregion
+
+
         #endregion
 
         #region LinkedList
@@ -723,6 +782,15 @@ namespace Beginner
             lRUCache.Process(new int[] { 1, 2, 3, 4, 5, 1, 2, 1, 5, 2, 3, 4, 2, 1, 4 });
            
         }
+
+        private static void SinglyLinkedList()
+        {
+            LinkedLists.Singly singly = new LinkedLists.Singly();
+            singly.LinkedListSwaps();
+        }
         #endregion
+
+        
     }
+    
 }

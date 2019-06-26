@@ -53,12 +53,14 @@
     <Compile Include="LonelyInt.cs" />
     <Compile Include="MinCutSquares.cs" />
     <Compile Include="MinSwaps.cs" />
+    <Compile Include="NSteps.cs" />
     <Compile Include="PairedSocks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReverseNumber.cs" />
     <Compile Include="SequentialNumbers.cs" />
     <Compile Include="SmallestDifference.cs" />
     <Compile Include="String2Num.cs" />
+    <Compile Include="TwoNumbersAsSumOfGivenNumber.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

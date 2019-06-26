@@ -9,7 +9,7 @@ namespace Strings
 {
     public class PalindromeWithJunk
     {
-        public string IsPalindrome(string str)
+        public string IsPalindrome2(string str)
         {
             int i = 0, j = str.Length - 1;
             str = str.ToLower();
@@ -32,6 +32,17 @@ namespace Strings
             string pattern = @"\w|\d";
             Regex regex = new Regex(pattern, RegexOptions.Compiled | RegexOptions.IgnoreCase);
             return regex.IsMatch(v.ToString());
+        }
+
+        public bool IsPalindrome(string input)
+        {
+            input = input.ToLower();
+            for (int i = 0, j = input.Length - 1; i < j; i++, j--)
+            {
+                if (input[i] != input[j])
+                    return false;
+            }
+            return true;
         }
     }
 }

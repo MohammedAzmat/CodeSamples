@@ -252,6 +252,43 @@ namespace LinkedLists
         }
         #endregion
 
+        private Node MakeList(int numOfNodes =5)
+        {
+            if (numOfNodes < 1) return null;
+            Random rand = new Random();
+
+            Node head = new Node(rand.Next(1, 10 * numOfNodes));
+            Node cur = head;
+            if (numOfNodes < 2) return head;
+            for (int i = 1; i < numOfNodes; i++)
+            {
+                cur.Link = new Node(rand.Next(1, 2 * numOfNodes));
+                cur = cur.Link;
+            }
+            return head;
+        }
+
+        private void PrintNodes(Node head)
+        {
+            Console.Write("\nList: ");
+            while (head != null)
+            {
+                Console.Write(head.Val + " ");
+                head = head.Link;
+            }
+            Console.Write("\n");
+        }
+
+        public void TestReverse(int num)
+        {
+            Node head = this.MakeList(num);
+            PrintNodes(head);
+            //Console.Write("Reverse1: ");
+            //PrintNodes(Reverse(head));
+            Console.Write("Reverse2: ");
+            PrintNodes(Reverse2(head));
+        }
+
         public Node Reverse(Node head)
         {
             if (head == null || head.Link == null) return head;
@@ -265,6 +302,52 @@ namespace LinkedLists
                 cur = head;
             }
             return prev;
+        }
+
+        public Node Reverse2(Node head)
+        {
+            if (head == null || head.Link == null) return head;
+            Node prev = null, cur = head, next = head.Link;
+            while (cur.Link != null)
+            {
+                cur.Link = prev;
+                prev = cur;
+                cur = next;
+                next = next.Link;
+            }
+            cur.Link = prev;
+            return cur;
+
+        }
+
+        private Node SwapPairs(Node head)
+        {
+            /*
+             * Case 1: Empty List
+             * Case 2: One Node
+             * Case 3: One Pair
+             * Case 4: 5 or more nodes
+             */
+            if (head == null || head.Link == null) return head;
+            Node prev = head, cur = head.Link, node = cur.Link;
+            head = cur;
+            cur.Link = prev;
+            prev.Link = SwapPairs(node);
+            return head;
+        }
+
+        public void LinkedListSwaps()
+        {
+            int[] arr = { 0, 1, 2, 4, 7 };
+            foreach (int node in arr)
+            {
+                Node head = MakeList(node);
+                PrintNodes(head);
+                head = SwapPairs(head);
+                PrintNodes(head);
+            }
+            
+
         }
     }
 }

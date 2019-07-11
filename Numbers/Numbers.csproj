@@ -44,6 +44,7 @@
     <Compile Include="Bribes.cs" />
     <Compile Include="Coins.cs" />
     <Compile Include="CordinateGeometry.cs" />
+    <Compile Include="DaysBetweenDates.cs" />
     <Compile Include="Find2LonerInASeaOfPairs.cs" />
     <Compile Include="GCD.cs" />
     <Compile Include="HouseActiveInActive.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="KLargestNumber.cs" />
     <Compile Include="KthSmallestNumber.cs" />
     <Compile Include="LonelyInt.cs" />
+    <Compile Include="LongestConsecutiveSequence.cs" />
     <Compile Include="MinCutSquares.cs" />
     <Compile Include="MinSwaps.cs" />
     <Compile Include="NSteps.cs" />

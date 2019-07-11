@@ -45,6 +45,7 @@
     <Compile Include="DupSubArr.cs" />
     <Compile Include="EarliestCommonAncestor.cs" />
     <Compile Include="IteraterForBT.cs" />
+    <Compile Include="NAryTree.cs" />
     <Compile Include="PathBetween2Nodes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

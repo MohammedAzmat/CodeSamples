@@ -8,10 +8,7 @@ namespace Beginner
     {
         static void Main(string[] args)
         {
-            //SumAsPair();
-            //MyPalindromes();
-            //TestIterater();
-            Nsteps();
+            DaysBetweenDates();
             Console.ReadKey();
         }
 
@@ -641,6 +638,21 @@ namespace Beginner
         {
             Numbers.NSteps nSteps = new Numbers.NSteps();
             Console.WriteLine("Number of ways for 5 steps without mem: " + nSteps.ways + " with mem: " + nSteps.ways2);
+        }
+        #endregion
+
+        #region Longest Consecutive Sequence of Repeating numbers in an unsorted array
+        private static void LngstConsec()
+        {
+            Numbers.LongestConsecutiveSequence longestConsecutiveSequence = new Numbers.LongestConsecutiveSequence();
+            Console.WriteLine(longestConsecutiveSequence.LngstIncrsingConsecSeq(new int[] { 10, 3, 20, 5, 4, 2 }));
+        }
+        #endregion
+
+        #region Days between dates
+        private static void DaysBetweenDates()
+        {
+            Numbers.DaysBetweenDates daysBetweenDates = new Numbers.DaysBetweenDates("09/19/1987", "03/29/2020");
         }
         #endregion
 

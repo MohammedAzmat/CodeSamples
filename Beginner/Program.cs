@@ -8,7 +8,7 @@ namespace Beginner
     {
         static void Main(string[] args)
         {
-            DaysBetweenDates();
+            BasicLinqOps();
             Console.ReadKey();
         }
 
@@ -479,6 +479,29 @@ namespace Beginner
 
         }
         #endregion
+
+        #region Linq Basic Operations
+        private static void BasicLinqOps()
+        {
+            List<string> myList = new List<string>()
+            {
+                "Azmat J Qureshi 31",
+                "Mohammed A Qureshi 32",
+                "mohammed A Qureshi 32",
+                "mohammed A qureshi 31",
+                "mohammed A qureshi 3",
+                "Wajiha A Qureshi 29",
+                "Wajiha A Asif 22",
+                "mohammed J Qureshi 60",
+                "Afshan J Qureshi 30"
+            };
+
+            Strings.SimpleLinqOnStrings simpleLinq = new Strings.SimpleLinqOnStrings();
+            simpleLinq.GetOrderedResults(myList);
+        }
+        #endregion
+
+
         #endregion
 
         #region Numbers
@@ -653,6 +676,24 @@ namespace Beginner
         private static void DaysBetweenDates()
         {
             Numbers.DaysBetweenDates daysBetweenDates = new Numbers.DaysBetweenDates("09/19/1987", "03/29/2020");
+        }
+        #endregion
+
+        #region Combinations and Permutations
+
+        private static void GetCombinationsOfSize()
+        {
+            Numbers.Combinations combinations = new Numbers.Combinations();
+            combinations.GetCombosOfLength(new int[] { 1, 2, 3 }, 2);
+        }
+        #endregion
+
+
+        #region Smallest Number by removing few Digits 
+        private static void SmallestNumFromStr()
+        {
+            Numbers.SmallestNumberFromString smallestNumberFromString = new Numbers.SmallestNumberFromString();
+            Console.WriteLine(smallestNumberFromString.GetSmallestNumber("765028321", 5));
         }
         #endregion
 

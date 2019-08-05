@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Bribes.cs" />
     <Compile Include="Coins.cs" />
+    <Compile Include="Combinations.cs" />
     <Compile Include="CordinateGeometry.cs" />
     <Compile Include="DaysBetweenDates.cs" />
     <Compile Include="Find2LonerInASeaOfPairs.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="ReverseNumber.cs" />
     <Compile Include="SequentialNumbers.cs" />
     <Compile Include="SmallestDifference.cs" />
+    <Compile Include="SmallestNumberFromString.cs" />
     <Compile Include="String2Num.cs" />
     <Compile Include="TwoNumbersAsSumOfGivenNumber.cs" />
   </ItemGroup>

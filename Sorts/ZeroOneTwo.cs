@@ -126,6 +126,51 @@ namespace Sorts
                 Console.Write(a[i] + " ");
             }
         }
+        /// <summary>
+        /// The Program Group Sorts the entire array as [HighPriority......MediumPriority......LowPriority]
+        /// </summary>
+        /// <param name="productCodes"></param>
+        public void OrderProductsByPriority(string[] productCodes)
+        {
+            if (productCodes != null && productCodes.Length > 0)
+            {
+                int highPriority = 0, lowPriority = productCodes.Length - 1, mediumPriority = 0;
+                while (mediumPriority <= lowPriority)
+                {
+                    switch (GetPriority(productCodes[mediumPriority]))
+                    {
+                        case 1:
+                            {
+                                Swap(productCodes, highPriority, mediumPriority);
+                                highPriority++;
+                                mediumPriority++;
+                                break;
+                            }
+                        case 2:
+                            mediumPriority++;
+                            break;
+                        case 3:
+                            {
+                                Swap(productCodes, lowPriority, mediumPriority);
+                                lowPriority--;
+                                break;
+                            }
+                    }
+                }
+            }
+        }
+
+        private int GetPriority(string v)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Swap(string[] productCodes, int i, int j)
+        {
+            string temp = productCodes[i];
+            productCodes[i] = productCodes[j];
+            productCodes[j] = temp;
+        }
 
         private void swap(int[] a, int s, int l)
         {

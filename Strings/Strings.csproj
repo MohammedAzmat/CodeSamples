@@ -52,6 +52,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReverseOrder.cs" />
     <Compile Include="ReverseString.cs" />
+    <Compile Include="SimpleLinqOnStrings.cs" />
     <Compile Include="SimpleRegEx.cs" />
     <Compile Include="SubStrings.cs" />
     <Compile Include="SumOfCharsInRange.cs" />

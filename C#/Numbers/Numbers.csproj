@@ -52,6 +52,7 @@
     <Compile Include="JumpingNumbers.cs" />
     <Compile Include="KLargestNumber.cs" />
     <Compile Include="KthSmallestNumber.cs" />
+    <Compile Include="LemonadeStand.cs" />
     <Compile Include="LonelyInt.cs" />
     <Compile Include="LongestConsecutiveSequence.cs" />
     <Compile Include="MinCutSquares.cs" />

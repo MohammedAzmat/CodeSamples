@@ -336,6 +336,30 @@ namespace LinkedLists
             return head;
         }
 
+        private Node AddLists(Node l1, Node l2)
+        {
+            Node head = new Node(0);
+            Node cur = head.Link;
+            if (l1 == null) return l2;
+            if (l2 == null) return l1;
+
+            int carry = 0;
+            while (l1 != null && l2 != null)
+            {
+                int add = carry + l1.Val + l2.Val;
+                carry = add / 10;
+                cur = new Node(add % 10);
+                cur = cur.Link;
+                l1 = l1.Link;
+                l2 = l2.Link;
+            }
+            if (l1.Link == null)
+                cur.Link = l2;
+            if (l2.Link == null)
+                cur.Link = l1;
+            return head.Link;
+        }
+
         public void LinkedListSwaps()
         {
             int[] arr = { 0, 1, 2, 4, 7 };

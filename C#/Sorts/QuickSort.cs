@@ -87,6 +87,39 @@ namespace Sorts
             return new int[] { temp_lo, c };
         }
 
+        private int[] QS(int[] arr)
+        {
+            QSort2(arr, 0, 0);
+            return arr;
+        }
 
+        private void QSort2(int[] arr, int low, int high)
+        {
+            int p = Pivot(arr, low, high);
+            QSort2(arr, low, p - 1);
+            QSort2(arr, p + 1, high);
+        }
+
+        private int Pivot(int[] arr, int low, int high)
+        {
+            int lastElem = arr[high], lowIndex = low;
+            for (int i = low; i < high; i++)
+            {
+                if (arr[i] > lastElem)
+                {
+                    Swap(arr, i, lowIndex);
+                    lowIndex++;
+                }
+            }
+            Swap(arr, lowIndex, high);
+            return lowIndex;
+        }
+
+        private void Swap(int[] arr, int a, int b)
+        {
+            int temp = arr[b];
+            arr[b] = arr[a];
+            arr[a] = temp;
+        }
     }
 }

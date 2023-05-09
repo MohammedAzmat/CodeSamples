@@ -46,6 +46,7 @@
     <Compile Include="Hanoi.cs" />
     <Compile Include="IntersectionRectangles.cs" />
     <Compile Include="LongestSubstring.cs" />
+    <Compile Include="Matrix.cs" />
     <Compile Include="MaxDiffInIndex.cs" />
     <Compile Include="MaxInArray.cs" />
     <Compile Include="MedianOfArrays.cs" />

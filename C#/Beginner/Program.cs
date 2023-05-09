@@ -8,7 +8,7 @@ namespace Beginner
     {
         static void Main(string[] args)
         {
-            BasicLinqOps();
+            SpiralMat();
             Console.ReadKey();
         }
 
@@ -277,6 +277,14 @@ namespace Beginner
             rotate2DArrInplace.LetsMakeNRotate(8);
         }
 
+        #endregion
+
+        #region SpiralMatrix
+        private static void SpiralMat() { 
+            Arrays.Matrix matrix = new Arrays.Matrix();
+            IList<int> list1 = matrix.SpiralOrder(new int[][] { new int[] { 1, 2, 3 }, new int[] { 4, 5, 6 }, new int[] { 7, 8, 9 } });
+            PrintListInt(list1);
+        }
         #endregion
 
         #endregion
@@ -843,7 +851,18 @@ namespace Beginner
         }
         #endregion
 
-        
+
+        #region Standard Print Functions
+        private static void PrintListInt(IList<int> list) {
+            Console.Write("List: ");
+            foreach (int x in list) { 
+                Console.Write(x + " "); 
+            }
+            Console.Write("\n");
+        }
+        #endregion
+
+
     }
-    
+
 }
